@@ -5,24 +5,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
-public class Login extends AppCompatActivity {
+public class Categorias extends AppCompatActivity {
 
-
-    Button bt1,bt2;
+    ImageView bt1,bt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_login);
+        setContentView (R.layout.activity_categorias);
 
-        bt1 = (Button)findViewById (R.id.button);
-        bt2 = (Button)findViewById (R.id.button2);
-
+        bt1 = (ImageView)findViewById (R.id.imageView27);
+        bt2 = (ImageView)findViewById (R.id.imageView28);
         bt1.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (Login.this,Menu.class);
+                Intent intent = new Intent (Categorias.this,Buscar_departamento.class);
                 startActivity (intent);
             }
         });
@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity {
         bt2.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (Login.this,Categorias.class);
+                Intent intent = new Intent(Categorias.this,nuevo_departamento.class);
                 startActivity (intent);
             }
         });
