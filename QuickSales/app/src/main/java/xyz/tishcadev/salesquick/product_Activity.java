@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,6 +58,7 @@ public class product_Activity extends Activity {
                     Toast.makeText(getApplicationContext(),"Error en la peticion",Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 tableDynamic.addData(fillData(response.body().getProductos()));
                 tableDynamic.backgraundData(Color.parseColor("#EFF3F6"), Color.parseColor("#FFFFFF"));
             }
@@ -95,7 +92,7 @@ public class product_Activity extends Activity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Products products = retrofit.create(Products.class);
-
+                
             }
         });
         dialog.show();
