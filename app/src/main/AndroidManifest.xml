@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Menu" />
+        <activity android:name=".Categorias" />
+        <activity android:name=".Buscar_departamento" />
+        <activity android:name=".nuevo_departamento"></activity>
     </application>
 
 </manifest>
