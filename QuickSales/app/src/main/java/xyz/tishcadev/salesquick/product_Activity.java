@@ -92,33 +92,7 @@ public class product_Activity extends Activity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Products products = retrofit.create(Products.class);
-                Call<MProducts> call = products.ProductsNew(
-                        mView.findViewById(R.id.Code),
-                        mView.findViewById(R.id.Name),
-                        mView.findViewById(R.id.Cost),
-                        mView.findViewById(R.id.Price),
-                        mView.findViewById(R.id.Stock),
-                        "Gola",
-                        mView.findViewById(R.id.Stock_Min),
-                        mView.findViewById(R.id.Price_Min),
-                        mView.findViewById(R.id.Price_Max),
-                        "Normal"
-                );
-                call.enqueue(new Callback<MProducts>() {
-                    @Override
-                    public void onResponse(Call<MProducts> call, Response<MProducts> response) {
-                        if (!response.isSuccessful()){
-                            Toast.makeText(getApplicationContext(),"Error en la peticion",Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-
-
-                    }
-                    @Override
-                    public void onFailure(Call<MProducts> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(),"Error en el servidor",Toast.LENGTH_SHORT).show();
-                    }
-                });
+                
             }
         });
         dialog.show();
