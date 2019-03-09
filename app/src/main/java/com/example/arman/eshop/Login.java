@@ -1,5 +1,6 @@
 package com.example.arman.eshop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -65,11 +66,15 @@ public class Login extends AppCompatActivity {
                     return;
                 }
                 Toast.makeText(getApplicationContext(),""+response.body().getMessage(),Toast.LENGTH_SHORT).show();
+                if(!response.body().isError()){
+                    Intent intent = new  Intent(Login.this,Menu.class);
+                    startActivity (intent);
+                }
             }
 
             @Override
             public void onFailure(Call<MLoginClient> call, Throwable t) {
-
+                Toast.makeText(getApplicationContext(),"Error de servidor",Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -19,8 +19,7 @@ public class Buscar_departamento extends AppCompatActivity {
         bt1.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (Buscar_departamento.this,Categorias.class);
-                startActivity (intent);
+                finish();
             }
         });
 

@@ -19,8 +19,7 @@ public class nuevo_departamento extends AppCompatActivity {
         bt1.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (nuevo_departamento.this,Categorias.class);
-                startActivity (intent);
+                finish();
             }
         });
 
