@@ -5,8 +5,10 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.Toast;
 
 import com.example.arman.eshop.Api.CategoriasClient;
@@ -29,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Categorias extends AppCompatActivity {
 
-    ImageView bt1,bt2;
+    ImageView bt1,bt2,bt3,bt4,bt5;
     TableDynamic tableDynamic;
     private TableLayout tableLayout;
     private String[] header ={"id","Nombre"};
@@ -58,14 +60,28 @@ public class Categorias extends AppCompatActivity {
             }
         });
 
-        tableLayout = new TableLayout(getApplicationContext());
-        tableLayout = findViewById(R.id.table);
-        tableDynamic = new TableDynamic(tableLayout,getApplicationContext());
-        tableDynamic.addHeadder(header);
-        tableDynamic.backgraundHeader(Color.parseColor("#1F78BD"));
+        bt5 = (ImageView)findViewById (R.id.img_actualizar_categoria);
+        bt5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                rows = new ArrayList<>();
+                fillTabla();
+            }
+        });
         fillTabla();
     }
     private void fillTabla(){
+        tableLayout = new TableLayout(getApplicationContext());
+        tableLayout = findViewById(R.id.table);
+        tableLayout.removeAllViews();
+        for (int i = 1; i < tableLayout.getChildCount(); i++) {
+            View child = tableLayout.getChildAt(i);
+            if (child instanceof TableRow) ((ViewGroup) child).removeAllViews();
+        }
+        tableDynamic = new TableDynamic(tableLayout,getApplicationContext());
+        tableDynamic.addHeadder(header);
+        tableDynamic.backgraundHeader(Color.parseColor("#1F78BD"));
+
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         CookieHandler cookieHandler = new CookieManager();
