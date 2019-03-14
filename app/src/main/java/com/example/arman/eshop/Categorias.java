@@ -44,6 +44,10 @@ public class Categorias extends AppCompatActivity {
 
         bt1 = (ImageView)findViewById (R.id.imageView27);
         bt2 = (ImageView)findViewById (R.id.imageView28);
+        bt3 = (ImageView)findViewById (R.id.imageView30);
+        bt4 = (ImageView)findViewById (R.id.imageView29);
+        bt5 = (ImageView)findViewById (R.id.img_actualizar_categoria);
+
         bt1.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
@@ -60,7 +64,23 @@ public class Categorias extends AppCompatActivity {
             }
         });
 
-        bt5 = (ImageView)findViewById (R.id.img_actualizar_categoria);
+        bt3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Categorias.this,editar_departamento.class);
+                startActivity (intent);
+            }
+        });
+
+        bt4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Categorias.this,eliminar_categoria.class);
+                startActivity (intent);
+            }
+        });
+
+
         bt5.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {

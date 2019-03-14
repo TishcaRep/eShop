@@ -15,8 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-
             <EditText
                 android:id="@+id/editText3"
                 android:layout_width="wrap_content"
@@ -27,7 +25,6 @@
                 android:gravity="center"
                 android:hint="ID_Departamento"
                 android:inputType="number" />
-
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
